@@ -6,8 +6,9 @@ import (
 )
 
 func BookRoutes(router *gin.Engine) {
-	productGroup := router.Group("/phones")
+	productGroup := router.Group("")
 	{
-		productGroup.POST("/", book_controllers.Create)
+		productGroup.POST("/create_book", book_controllers.CreateBook)
+		productGroup.POST("/create_books", book_controllers.CreateBooks)
 	}
 }

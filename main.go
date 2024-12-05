@@ -1,16 +1,18 @@
 package main
 
 import (
-	"ABIS/services/parser"
+	"ABIS/api"
+	"ABIS/config"
+	"ABIS/database"
 )
 
 func main() {
-	//config.LoadENV()
+	config.LoadENV()
 
-	//database.Connect()
-	//defer database.Disconnect()
-	//
-	//api.RouterStart()
+	database.Connect()
+	defer database.Disconnect()
 
-	parser.Read("static/pdf/test.pdf")
+	api.RouterStart()
+
+	//parser.GetDataFromTable("./data/excel/test.xlsx")
 }

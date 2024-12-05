@@ -5,10 +5,7 @@ import (
 	"log"
 )
 
-type Config struct {
-	ringostatUsername string
-	ringostatPassword string
-}
+const TempPath = "./data/books/"
 
 func LoadENV() {
 	err := godotenv.Load()
